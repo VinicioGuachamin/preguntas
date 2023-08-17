@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">pro-academia.com</domain>
+        <domain includeSubdomains="true">solinteg360.com</domain>
+        <domain includeSubdomains="true">31.170.160.31</domain>
+    </domain-config>
+</network-security-config>

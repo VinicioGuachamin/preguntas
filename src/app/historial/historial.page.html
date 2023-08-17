@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Historial</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item lines="none">
+            <ion-col>
+
+                <!--Registro_1-->
+                <ion-item *ngFor="let item of recordsHistorial">
+                    <div class="thumb" slot="end">
+                        <ion-label><b>Nota:</b>{{item.nota}}</ion-label>
+                    </div>
+                    <ion-label>
+                        <p><b>Aciertos:</b> {{item.aciertos}}</p>
+                        <p><b>Fallidos:</b> {{item.fallos}}</p>
+                        <p><b>Fecha:</b> {{item.fecha}}</p>
+                    </ion-label>
+                </ion-item>
+
+            </ion-col>
+        </ion-item>
+    </ion-list>
+</ion-content>

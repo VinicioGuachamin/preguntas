@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Preguntas</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="FinalizarCuestionario()">Finalizar</ion-button>
+        </ion-buttons>
+<!--        <ion-progress-bar [value]="porcentaje"></ion-progress-bar>-->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-content class="ion-padding" style="--background: #d7d8da26">
+
+        <ion-row>
+            <ion-col>
+                <b style="margin-top: 0.5px; font-size: 24px">{{"Pregunta " + (preguntaActual + 1)}}</b>
+                <p [innerHTML]="itemPregunta.descripcion">
+
+                </p>
+            </ion-col>
+        </ion-row>
+
+        <!--Sección Imagen-->
+        <ion-row *ngIf="itemPregunta.imagen != null">
+<!--        <ion-row>-->
+            <ion-col>
+                <ion-img class="centerImage" style="width: 180px; height: 180px"
+                         src="{{itemPregunta.imagen}}"></ion-img>
+            </ion-col>
+        </ion-row>
+
+        <div class="bottom-section ion-padding" style="margin-top: -30px">
+            <div class="general">
+                <h5>Opciones</h5>
+                <div class="gen-list">
+
+                    <!--Sección Radio Group (opciones)-->
+                    <ion-radio-group [(ngModel)]="idSelected" (ionChange)="RadioGroupChange($event)">
+
+                        <!-- Respuestas -->
+                        <span *ngFor="let item of respuestas">
+                            <ion-item lines="none" [ngClass]="{'correct': auxCorrect == item.id, 'incorrect': auxIncorrect == item.id}">
+                                <div class="thumb" slot="start">
+                                    <ion-radio value="{{item.id}}"></ion-radio>
+                                </div>
+                                <ion-label style="white-space: break-spaces!important;">
+                                    <div class="center">
+                                        <!--<ion-img class="imagenstyle_opc"-->
+                                        <!-- src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYn7I454DTZ085b5F3ixK5XUQn5i3cx_E4Aw&usqp=CAU"></ion-img>-->
+                                        <h5>{{item.descripcion}}</h5>
+                                    </div>
+                                </ion-label>
+                            </ion-item>
+                        </span>
+
+                    </ion-radio-group>
+
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-content>
+
+
+<ion-footer class="ion-text-center">
+    <ion-row>
+
+        <!--Sección botón ver solución-->
+<!--        <ion-col *ngIf="showSiguiente">-->
+<!--            <ion-button color="warning" expand="block" (click)="VerSolucion()">Solución-->
+<!--            </ion-button>-->
+<!--        </ion-col>-->
+
+        <!--Sección botón verificar respuesta-->
+        <ion-col *ngIf="!showFinalizar">
+            <ion-button id="btnNext" color="success" expand="block" (click)="VerificarRespuesta()" [disabled]="buttonDisable">
+                {{showSiguiente ? "Siguiente" : "Validar Respuesta"}}
+                <ion-icon *ngIf="showSiguiente" slot="end" name="chevron-forward-outline"></ion-icon>
+                <ion-icon *ngIf="!showSiguiente" slot="end" name="checkmark-circle"></ion-icon>
+            </ion-button>
+        </ion-col>
+
+        <!--Sección botón finalizar-->
+        <ion-col *ngIf="showFinalizar">
+            <ion-button color="success" expand="block" (click)="VerNota()" [disabled]="buttonDisable">
+                Finalizar
+                <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+            </ion-button>
+        </ion-col>
+
+    </ion-row>
+
+</ion-footer>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Solución</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content class="ion-padding" style="--background: #d7d8da26">
+
+    <!--Sección Encabezado-Pregunta-->
+    <ion-row>
+      <ion-col>
+
+        <p>
+          {{itemPregunta.descripcion}}
+        </p>
+
+      </ion-col>
+    </ion-row>
+
+    <!--Sección Imagen-->
+    <ion-row *ngIf="itemPregunta.image != null">
+      <ion-col>
+        <ion-img class="centerImage" style="width: 180px; height: 180px"
+                 src="https://www.problemasyecuaciones.com/funciones/polinomica/P1g.png"></ion-img>
+      </ion-col>
+    </ion-row>
+
+
+    <!--Sección Explicación-->
+    <div class="bottom-section ion-padding">
+      <div class="general">
+        <b style="margin-top: 0.4px; font-size: 20px; color: #00BBC0">Explicación:</b>
+      </div>
+    </div>
+
+    <ion-item-divider>
+      <p style="padding: 5px!important;">
+        It is a long established fact that a reader will be distracted by the readable
+        content of a page when looking at its layout. The point of using Lorem Ipsum
+        is that it has a more-or-less normal distribution of letters, as opposed to
+        using 'Content here, content here'
+      </p>
+    </ion-item-divider>
+
+  </ion-content>
+</ion-content>
+

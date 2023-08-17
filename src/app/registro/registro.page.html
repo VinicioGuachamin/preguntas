@@ -1,0 +1,74 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title>Crear Usuario</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="ExitApp()" style="font-size: 23px">
+                <ion-icon style="color: white" name="exit"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <form [formGroup]="registroForm" (ngSubmit)="Registrar(registroForm.value)">
+        <ion-col>
+
+            <!--Sección Cédula-->
+            <ion-item lines="full">
+                <ion-label class="colorlabelFocus" position="stacked">Cédula</ion-label>
+                <ion-input type="text" placeholder="1700000000" formControlName="cedula"></ion-input>
+            </ion-item>
+
+            <br>
+
+            <!--Sección Nombres-->
+            <ion-item>
+                <ion-label class="colorlabelFocus" position="stacked">Nombres</ion-label>
+                <ion-input type="texto" placeholder="Ingrese sus nombres" formControlName="nombre"></ion-input>
+            </ion-item>
+
+            <br>
+
+            <!--Sección Apellidos-->
+            <ion-item>
+                <ion-label class="colorlabelFocus" position="stacked">Apellidos</ion-label>
+                <ion-input type="texto" placeholder="Ingrese sus apellidos" formControlName="apellido"></ion-input>
+            </ion-item>
+
+            <br>
+
+            <!--Sección Email-->
+            <ion-item>
+                <ion-label class="colorlabelFocus" position="stacked">Email</ion-label>
+                <ion-input type="email" placeholder="Ingrese su email" formControlName="email"></ion-input>
+            </ion-item>
+
+            <br>
+
+            <!--Sección Edad-->
+            <ion-item>
+                <ion-label class="colorlabelFocus" position="stacked">Edad</ion-label>
+                <ion-input maxlength="3" type="number" placeholder="Ingrese su edad" formControlName="edad"></ion-input>
+            </ion-item>
+
+            <br>
+
+            <!--Sección Contrseña-->
+            <ion-item>
+                <ion-label class="colorlabelFocus" position="stacked">Contraseña</ion-label>
+                <ion-input type="password" formControlName="pwd" placeholder="Ingrese la contraseña"></ion-input>
+            </ion-item>
+
+            <br>
+            <!--Botón Registrar-->
+            <ion-button style="background: #00BBC0" type="submit" color="#00BBC0" expand="block"
+                        [disabled]="registroForm.invalid">
+                Registrar &nbsp;
+                <ion-icon name="person-add"></ion-icon>
+            </ion-button>
+
+        </ion-col>
+    </form>
+
+</ion-content>

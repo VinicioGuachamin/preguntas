@@ -1,0 +1,42 @@
+<ion-content class="ion-padding">
+    <ion-grid style="height: 100%">
+        <ion-row class="ion-text-center ion-align-items-center" style="height: 100%">
+            <ion-col>
+
+                <!--Sección del logo-->
+                <ion-item lines="none">
+                    <ion-img src="assets/image/Logo.jpeg"></ion-img>
+<!--                    <ion-img src="https://www.seekpng.com/png/detail/828-8281927_preguntas-ms-frecuentes-pregunta-png.png"></ion-img>-->
+                </ion-item>
+
+                <br>
+                <br>
+
+                <!--Sección Cédula-->
+                <ion-item>
+                    <ion-label class="colorlabelFocus" floating position="stacked">Cédula</ion-label>
+                    <ion-input placeholder="Ingrese la cédula" [(ngModel)]="user"></ion-input>
+                </ion-item>
+
+                <br>
+
+                <!--Sección Contraseña-->
+                <ion-item>
+                    <ion-label class="colorlabelFocus" position="stacked">Contraseña</ion-label>
+                    <ion-input type="password" placeholder="Ingrese la contraseña" [(ngModel)]="pass"></ion-input>
+                </ion-item>
+
+                <br>
+
+                <ion-button style="background: #00BBC0" color="#00BBC0" (click)="IngresarPerfil()">Ingresar</ion-button>
+
+                <br>
+                <br>
+
+                <a style="color:#00BBC0" (click)="EmpezarPrueba()">Ingresar sin registrarse</a>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+

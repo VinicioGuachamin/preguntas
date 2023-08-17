@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title>Perfil</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="ExitApp()" style="font-size: 23px">
+                <ion-icon style="color: white" name="exit"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="background-holder"></div>
+
+    <div class="top-card ion-text-center ion-padding-vertical">
+        <div class="the-title ion-text-center">
+            <h2>Pro Academia</h2>
+        </div>
+
+        <!--Sección Credenciales-->
+        <div class="img-holder">
+            <ion-avatar>
+                <img src="https://image.freepik.com/vector-gratis/perfil-avatar-hombre-icono-redondo_24640-14044.jpg">
+            </ion-avatar>
+        </div>
+        <div class="details">
+            <h5 style="margin-bottom: 0px">{{usercorrect.nombres + " " + usercorrect.apellidos}}</h5>
+            <p style="margin-bottom: 0pc">{{usercorrect.cedula}}</p>
+        </div>
+    </div>
+
+    <div class="bottom-section ion-padding">
+        <div class="general">
+            <h5>Mi perfil</h5>
+            <div class="gen-list">
+
+                <!--Sección Nota de Grado-->
+                <ion-item lines="none">
+                    <div class="thumb" slot="start">
+<!--                        <ion-icon class="style_icon" name="list"></ion-icon>-->
+                        <ion-icon class="style_icon" name="checkmark-circle"></ion-icon>
+                    </div>
+                    <ion-label>
+                        <h2 (click)="ChangeNotaGrado()">Nota de Grado</h2>
+                    </ion-label>
+                    <strong slot="end">{{usercorrect.nota_grado}}</strong>
+                </ion-item>
+
+                <!--Sección Historial de pruebas-->
+                <ion-item lines="none">
+                    <div class="thumb" slot="start">
+                        <ion-icon class="style_icon" name="list"></ion-icon>
+                    </div>
+                    <ion-label>
+                        <h2 (click)="IngresarHistorial()">Historial de pruebas</h2>
+                    </ion-label>
+                </ion-item>
+
+                <!--Sección Empezar prueba-->
+                <ion-item lines="none">
+                    <div class="thumb" slot="start">
+                        <ion-icon class="style_icon" name="school"></ion-icon>
+                    </div>
+                    <ion-label>
+                        <h2 (click)="EmpezarPrueba()">Empezar Prueba</h2>
+                    </ion-label>
+                </ion-item>
+
+            </div>
+        </div>
+    </div>
+</ion-content>

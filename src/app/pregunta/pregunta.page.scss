@@ -1,0 +1,49 @@
+.bottom-section {
+  //margin-top: 45px;
+  h5 {
+    color: #77869E !important;
+  }
+
+  .general {
+    margin-top: 30px;
+
+    .gen-list {
+      ion-item {
+        margin-top: 10px !important;
+        --background: white !important;
+
+        ion-label {
+          h2 {
+            color: #042C5C !important;
+          }
+
+          p {
+            color: #77869E !important;
+            font-family: 'AvenirR' !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.centerImage {
+  //display: block;
+  //margin: auto;
+  //width: 50%;
+  margin: auto;
+  display: block;
+}
+
+.correct {
+  border: 2px solid green;
+}
+
+.incorrect {
+  border: 2px solid red;
+}
+
+.imagenstyle_opc{
+  width: 140px;
+  height: 50px;
+}
